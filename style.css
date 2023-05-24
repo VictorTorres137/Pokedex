@@ -11,7 +11,7 @@ body {
   background-color: white;
 }
 body header {
-  background-color: rgb(61, 120, 197);
+  background-color: rgb(59, 191, 231);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +32,6 @@ body header #d-input #pokemon {
 body header #d-input #btok {
   height: 40px;
   width: 40px;
-  border: 0;
 }
 body #tipos {
   display: flex;
