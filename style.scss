@@ -1,0 +1,101 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  background-color: white;
+  
+  header{
+    background-color: rgb(61, 120, 197);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 100vw;
+    #d-input{
+      display: flex;
+      justify-content: space-around;
+      width: 700px;
+      #pokemon{
+        height: 40px;
+        width: 500px;
+        font-size: 20px;
+        border: 0;
+        // border: solid 1px black;
+      }
+      #btok{
+        height: 40px;
+        width: 40px;
+        border: 0;
+        
+      }
+    }
+  }
+  #tipos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(141, 141, 141);
+    margin: 10px;
+    height: 60px;
+    width: 300px;
+    div{
+      display: flex;
+      margin: 10px;
+      background-color: blue;
+      font-size: 30px;
+      justify-content: center;
+      border-radius: 4px;
+      height: 40px;
+      width: 120px;
+    }
+  }
+  #info{
+    display: flex;
+    border: solid 2px black;
+
+    img{
+      width: 600px;
+      height: 600px;
+      
+    }
+    #fraquesas{
+      background-color: rgb(25, 161, 155);
+      width: 600px;
+      height: 600px;
+      border-left: solid 2px black;
+      
+      #d4x{
+        background-color: red;
+        height: 100px;
+      }
+      #d2x{
+        background-color: orange;
+        height: 100px;
+      }
+      #d1x{
+        background-color: gray;
+        height: 100px;
+      }
+      #d1-2x{
+        background-color: rgb(201, 201, 42);
+        height: 100px;
+      }
+      #d1-4x{
+        background-color: lightblue;
+        height: 100px;
+      }
+      #d0x{
+        background-color: white;
+        height: 100px;
+      }
+
+    }
+  }
+}
