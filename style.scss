@@ -18,7 +18,7 @@ $colorIce: #51c4e7;
 $colorBug: #729f3f;
 $colorGhost: #7b62a3;
 $colorSteel: #9eb7b8;
-$colorDragon:linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+$colorDragon: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
 $colorDark: #707070;
 $colorFairy: #fdb9e9;
 
@@ -29,6 +29,9 @@ body{
   align-items: center;
   background-color: white;
   
+  
+
+
   header{
     background-color: rgb(59, 191, 231);
    
@@ -65,7 +68,42 @@ body{
     margin: 10px;
     height: 60px;
     width: 300px;
-    div{
+
+    .normal{
+      background: $colorNormal;
+    }
+    .fire{
+      background: $colorFire;
+    }
+    .water{
+      background: $colorWater;
+    }
+    .grass{
+      background: $colorGrass;
+    }
+    .flying{
+      background: $colorFlying;
+    }
+    .fighting{
+      background: $colorFighting;
+    }
+    .poison{
+      background: $colorPoison;
+    }
+    .eletric{
+      background: $colorNormal;
+    }
+    .normal{
+      background: $colorNormal;
+    }
+    .normal{
+      background: $colorNormal;
+    }
+    .dragon{
+      background: $colorDragon;
+    }
+
+    .tipo{
       display: flex;
       margin: 10px;
       background-color: blue;
