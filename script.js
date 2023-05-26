@@ -5,24 +5,47 @@ const tipos = document.querySelector('#tipos')
 // const pokemon = document.querySelector('#pokemon').value
 // const pokemon = ''
 
+const listaTiposGeral = [
+  { tipo: 'normal', dano: 1 },
+  { tipo: 'fire', dano: 1 },
+  { tipo: 'water', dano: 1 },
+  { tipo: 'grass', dano: 1 },
+  { tipo: 'flying', dano: 1 },
+  { tipo: 'poison', dano: 1 },
+  { tipo: 'electric', dano: 1 },
+  { tipo: 'ground', dano: 1 },
+  { tipo: 'rock', dano: 1 },
+  { tipo: 'psychic', dano: 1 },
+  { tipo: 'ice', dano: 1 },
+  { tipo: 'bug', dano: 1 },
+  { tipo: 'ghost', dano: 1 },
+  { tipo: 'steel', dano: 1 },
+  { tipo: 'dragon', dano: 1 },
+  { tipo: 'dark', dano: 1 },
+  { tipo: 'fairy', dano: 1 } 
+]
+
 
 let listaF = []
 
 
 function geraFraquesas (dados){
   
-  listaF = []
+  // Renovar Função Criar lista unica de 2x 0x 1/2x
 
-  for (item of dados.types){
+  // listaF = []
+
+  // for (item of dados.types){
      
-    fetch(item.type.url)
-    .then(transformaJson)
-    .then(lista)
-    .then(printLista)
-    .catch()
-  }
+  //   fetch(item.type.url)
+  //   .then(transformaJson)
+  //   .then(lista)
+  //   .catch()
+  // }
+  
+  // console.log(listaF)
 
-  return listaFraq
+  // return listaF
 }
 
 function transformaJson (response){
@@ -79,18 +102,31 @@ function lista (dados){
 
   listaF.push(listGeral)
 
-  const listaFraq = listaF
-  
-  return listaFraq
+  // const listaFraq = listaF
+
+  // console.log(listaFraq)
+
+  return listaF
 }
 
 function printLista(item){
   console.log(item)
+  for (valor of item){
+      for(val2x of valor[0]){
+        for(valListaGeral of listaTiposGeral){
+          if(val2x == valListaGeral.tipo){
+            valListaGeral.dano*=2
+          }
+        }
+      }
+  }
+  console.log(listaTiposGeral)
+
 }
 
 
 function printErro (dados){
-  console.log('Erro')
+  // console.log('Erro')
 }
 
 
@@ -103,6 +139,7 @@ btok.onclick = () => {
     .then(mostraImagem)
     .then(mostraTipos)
     .then(geraFraquesas)
+    .then(printLista)
     .catch(printErro)
 }
 
