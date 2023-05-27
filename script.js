@@ -30,22 +30,32 @@ let listaF = []
 
 
 function geraFraquesas (dados){
+
+  listaF = []
+
+  let a = 'a'
+  let b = 'b'
+
   
-  // Renovar Função Criar lista unica de 2x 0x 1/2x
+  console.log("dados",dados)
+  console.log("dados2",dados.types[0].type.url)
 
-  // listaF = []
+  a = fetch(dados.types[0].type.url)
+    .then(transformaJson)
+    .catch()
 
-  // for (item of dados.types){
-     
-  //   fetch(item.type.url)
-  //   .then(transformaJson)
-  //   .then(lista)
-  //   .catch()
-  // }
+  console.log(dados.types.length)
+
+  if (dados.types.length == 2){
+
+    b = fetch(dados.types[1].type.url)
+    .then(transformaJson)
+    .catch()
+  }
   
-  // console.log(listaF)
+  console.log(a)
+  console.log(b)
 
-  // return listaF
 }
 
 function transformaJson (response){
@@ -106,11 +116,11 @@ function lista (dados){
 
   // console.log(listaFraq)
 
-  return listaF
+  return listaGeral
 }
 
 function printLista(item){
-  console.log(item)
+  // console.log(item)
   for (valor of item){
       for(val2x of valor[0]){
         for(valListaGeral of listaTiposGeral){
