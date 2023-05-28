@@ -25,14 +25,39 @@ const listaTiposGeral = [
   { tipo: 'fairy', dano: 1 } 
 ]
 
-
 let listaF = []
 
+function criaLista(item){
+  let lFraq = []
+  // console.log("cria lista", item.damage_relations)
+
+
+  for (ob of item.damage_relations.double_damage_from){
+    lFraq.push(ob.name)
+  }
+
+  // console.log(lFraq)
+
+  return lFraq
+
+}
+
+function n (p){
+
+  console.log("P", p)
+  
+}
+
+function atuaListFim (p){
+
+  console.log("P", p)
+  b.then(n)
+}
 
 function geraFraquesas (dados){
 
   listaF = []
-
+  listaRelacoes = []
   let a = 'a'
   let b = 'b'
 
@@ -42,7 +67,10 @@ function geraFraquesas (dados){
 
   a = fetch(dados.types[0].type.url)
     .then(transformaJson)
+    .then(criaLista)
     .catch()
+
+  listaF.push(a)
 
   console.log(dados.types.length)
 
@@ -50,11 +78,15 @@ function geraFraquesas (dados){
 
     b = fetch(dados.types[1].type.url)
     .then(transformaJson)
+    .then(criaLista)
     .catch()
+    listaF.push(b)
+    
   }
-  
-  console.log(a)
-  console.log(b)
+
+
+  listaRelacoes = a.then(atuaListFim)
+ 
 
 }
 
