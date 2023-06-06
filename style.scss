@@ -34,7 +34,77 @@ body{
   // justify-content: center;
   align-items: center;
   background-color: white;
+  .normal{
+    background-color: $colorNormal;
+  }
 
+  .fire{
+    background-color: $colorFire;
+  }
+
+  .water{
+    background: $colorWater;
+  }
+
+  .grass{
+    background: $colorGrass;
+  }
+
+  .flying{
+    background: $colorFlying;
+  }
+
+  .fighting{
+    background: $colorFighting;
+  }
+
+  .poison{
+    background: $colorPoison;
+  }
+
+  .electric{
+    background: $colorElectric;
+  }
+
+  .ground{
+    background: $colorGround;
+  }
+
+  .rock{
+    background: $colorRock;
+  }
+
+  .psychic{
+    background: $colorPsychic;
+  }
+
+  .ice{
+    background: $colorIce;
+  }
+
+  .bug{
+    background: $colorBug;
+  }
+
+  .ghost{
+    background: $colorGhost;
+  }
+
+  .steel{
+    background: $colorSteel;
+  }
+
+  .dragon{
+    background: $colorDragon;
+  }
+
+  .dark{
+    background: $colorDark;
+  }
+
+  .fairy{
+    background: $colorFairy;
+  }
   header{
     background: rgb(59, 191, 231);
    
@@ -73,77 +143,7 @@ body{
     height: 60px;
     width: 300px;
 
-    .normal{
-      background-color: $colorNormal;
-    }
-
-    .fire{
-      background-color: $colorFire;
-    }
-
-    .water{
-      background: $colorWater;
-    }
-
-    .grass{
-      background: $colorGrass;
-    }
-
-    .flying{
-      background: $colorFlying;
-    }
-
-    .fighting{
-      background: $colorFighting;
-    }
-
-    .poison{
-      background: $colorPoison;
-    }
-
-    .electric{
-      background: $colorElectric;
-    }
-
-    .ground{
-      background: $colorGround;
-    }
-
-    .rock{
-      background: $colorRock;
-    }
-
-    .psychic{
-      background: $colorPsychic;
-    }
-
-    .ice{
-      background: $colorIce;
-    }
-
-    .bug{
-      background: $colorBug;
-    }
-
-    .ghost{
-      background: $colorGhost;
-    }
-
-    .steel{
-      background: $colorSteel;
-    }
-
-    .dragon{
-      background: $colorDragon;
-    }
-
-    .dark{
-      background: $colorDark;
-    }
-
-    .fairy{
-      background: $colorFairy;
-    }
+    
 
     .tipo{
       display: flex;
