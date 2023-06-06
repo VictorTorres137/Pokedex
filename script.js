@@ -14,16 +14,21 @@ const d0x = document.querySelector('#d0x')
 // const pokemon = ''
 
 
+
 let listaF = []
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> parent of ac214a8 (Logica Fraquezas)
 
 function geraFraquesas (dados){
   function multtipos (item){
     let listRelevantes = []
     
 
+<<<<<<< HEAD
     for (tipo of item.damage_relations.double_damage_from){
       listRelevantes.push({tipo:tipo["name"], dano:2})
     }
@@ -33,6 +38,12 @@ function geraFraquesas (dados){
     for (tipo of item.damage_relations.no_damage_from){
       listRelevantes.push({tipo:tipo["name"], dano:0})
     }
+=======
+  listaF = []
+
+  let a = 'a'
+  let b = 'b'
+>>>>>>> parent of ac214a8 (Logica Fraquezas)
 
     return listRelevantes
 
@@ -61,11 +72,19 @@ function geraFraquesas (dados){
   ]
   
 
+<<<<<<< HEAD
   let tipos = []
 
   const tipo1 = fetch(`${dados.types[0].type["url"]}`).then(transformaJson)
 
   tipos.push(tipo1)
+=======
+  a = fetch(dados.types[0].type.url)
+    .then(transformaJson)
+    .catch()
+
+  console.log(dados.types.length)
+>>>>>>> parent of ac214a8 (Logica Fraquezas)
 
   if (dados.types[1]){
     const tipo2 = fetch(`${dados.types[1].type["url"]}`).then(transformaJson)
@@ -75,6 +94,7 @@ function geraFraquesas (dados){
   // na lista tipos tem as promisses dos tipos do pokemon
   // console.log(listaGeral)
 
+<<<<<<< HEAD
   function printFraq(item){
     
     
@@ -90,6 +110,15 @@ function geraFraquesas (dados){
   
   }else{
     rel1 = tipos[0].then(multtipos)
+=======
+    b = fetch(dados.types[1].type.url)
+    .then(transformaJson)
+    .catch()
+  }
+  
+  console.log(a)
+  console.log(b)
+>>>>>>> parent of ac214a8 (Logica Fraquezas)
 
     rel1.then(printFraq)
   }
