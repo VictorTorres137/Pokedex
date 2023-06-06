@@ -1,22 +1,34 @@
 
-
 const btok = document.querySelector('#btok')
-const btok2 = document.querySelector('#btok2')
 const imagemPokemon = document.querySelector('#imagemPokemon')
 const tipos = document.querySelector('#tipos')
-const d4x = document.querySelector('#d4x')
-const d2x = document.querySelector('#d2x')
-const d1x = document.querySelector('#d1x')
-const d1_2x = document.querySelector('#d1_2x')
-const d1_4x = document.querySelector('#d1_4x')
-const d0x = document.querySelector('#d0x')
 // const pokemon = document.querySelector('#pokemon').value
 // const pokemon = ''
 
+const listaTiposGeral = [
+  { tipo: 'normal', dano: 1 },
+  { tipo: 'fire', dano: 1 },
+  { tipo: 'water', dano: 1 },
+  { tipo: 'grass', dano: 1 },
+  { tipo: 'flying', dano: 1 },
+  { tipo: 'poison', dano: 1 },
+  { tipo: 'electric', dano: 1 },
+  { tipo: 'ground', dano: 1 },
+  { tipo: 'rock', dano: 1 },
+  { tipo: 'psychic', dano: 1 },
+  { tipo: 'ice', dano: 1 },
+  { tipo: 'bug', dano: 1 },
+  { tipo: 'ghost', dano: 1 },
+  { tipo: 'steel', dano: 1 },
+  { tipo: 'dragon', dano: 1 },
+  { tipo: 'dark', dano: 1 },
+  { tipo: 'fairy', dano: 1 } 
+]
 
 
 let listaF = []
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -98,13 +110,20 @@ function geraFraquesas (dados){
   function printFraq(item){
     
     
+=======
+function criaLista(item){
+  let lFraq = []
+  // console.log("cria lista", item.damage_relations)
+
+
+  for (ob of item.damage_relations.double_damage_from){
+    lFraq.push(ob.name)
+>>>>>>> parent of 0a5fdbb (logica fraquesas)
   }
 
-  if (tipos[1]){
-    
-    rel1 = tipos[0].then(multtipos)
-    rel2 = tipos[1].then(multtipos)
+  // console.log(lFraq)
 
+<<<<<<< HEAD
     rel1.then(printFraq)
     // rel2.then(printFraq)
   
@@ -119,44 +138,61 @@ function geraFraquesas (dados){
   console.log(a)
   console.log(b)
 >>>>>>> parent of ac214a8 (Logica Fraquezas)
+=======
+  return lFraq
+>>>>>>> parent of 0a5fdbb (logica fraquesas)
 
-    rel1.then(printFraq)
-  }
-
-
-  console.log("lista Geral",listaGeral)
-  console.log("lista Geral1",listaGeral[1])
-  // let HTMLFraq = ''
-  for (item of listaGeral){
-    
-    
-    switch(item["dano"]){
-      
-      case 4:
-        d4x.innerHTML += `<div class="tipo ${item["tipo"]}"> ${item["tipo"]} </div>`
-        break;
-      case 2:
-        d2x.innerHTML += `<div class="tipo ${item["tipo"]}"> ${item["tipo"]} </div>`
-        break;
-      case 1:
-        d1x.innerHTML += `<div class="tipo ${item["tipo"]}"> ${item["tipo"]} </div>`
-        break;
-      case 0.5:
-        d1_2x.innerHTML += `<div class="tipo ${item["tipo"]}"> ${item["tipo"]} </div>`
-        break;
-      case 0.25:
-        d1_4x.innerHTML += `<div class="tipo ${item["tipo"]}"> ${item["tipo"]} </div>`
-        break;
-
-    }
-  }
-
-  // tmlTipos += `<div class="tipo ${item.type.name}"> ${item.type.name} </div>`
-  // console.log("rel",rel1)
-  // console.log("rel",rel2)
 }
 
-function transformaJson(response){
+function n (p){
+
+  console.log("P", p)
+  
+}
+
+function atuaListFim (p){
+
+  console.log("P", p)
+  b.then(n)
+}
+
+function geraFraquesas (dados){
+
+  listaF = []
+  listaRelacoes = []
+  let a = 'a'
+  let b = 'b'
+
+  
+  console.log("dados",dados)
+  console.log("dados2",dados.types[0].type.url)
+
+  a = fetch(dados.types[0].type.url)
+    .then(transformaJson)
+    .then(criaLista)
+    .catch()
+
+  listaF.push(a)
+
+  console.log(dados.types.length)
+
+  if (dados.types.length == 2){
+
+    b = fetch(dados.types[1].type.url)
+    .then(transformaJson)
+    .then(criaLista)
+    .catch()
+    listaF.push(b)
+    
+  }
+
+
+  listaRelacoes = a.then(atuaListFim)
+ 
+
+}
+
+function transformaJson (response){
     return response.json()
 }
 
@@ -210,18 +246,31 @@ function lista (dados){
 
   listaF.push(listGeral)
 
-  var listaFraq = listaF
-  
-  return listaFraq
+  // const listaFraq = listaF
+
+  // console.log(listaFraq)
+
+  return listaGeral
 }
 
 function printLista(item){
-  console.log(item)
+  // console.log(item)
+  for (valor of item){
+      for(val2x of valor[0]){
+        for(valListaGeral of listaTiposGeral){
+          if(val2x == valListaGeral.tipo){
+            valListaGeral.dano*=2
+          }
+        }
+      }
+  }
+  console.log(listaTiposGeral)
+
 }
 
 
 function printErro (dados){
-  console.log("erro",dados)
+  // console.log('Erro')
 }
 
 
@@ -234,12 +283,7 @@ btok.onclick = () => {
     .then(mostraImagem)
     .then(mostraTipos)
     .then(geraFraquesas)
+    .then(printLista)
     .catch(printErro)
 }
-
-btok2.onclick = () => {
-  console.log(listaFraq)
-
-}
-
 
