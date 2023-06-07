@@ -34,7 +34,34 @@ body{
   // justify-content: center;
   align-items: center;
   background-color: white;
+  .normal{background-color: $colorNormal;}
+  .fire{background-color: $colorFire;}
+  .water{background: $colorWater;}
+  .grass{background: $colorGrass;}
+  .flying{background: $colorFlying;}
+  .fighting{background: $colorFighting;}
+  .poison{background: $colorPoison;}
+  .electric{background: $colorElectric;}
+  .ground{background: $colorGround;}
+  .rock{background: $colorRock;}
+  .psychic{background: $colorPsychic;}
+  .ice{background: $colorIce;}
+  .bug{background: $colorBug;}
+  .ghost{background: $colorGhost;}
+  .steel{background: $colorSteel;}
+  .dragon{background: $colorDragon;}
+  .dark{background: $colorDark;}
+  .fairy{background: $colorFairy;}
 
+  .tipo{
+    display: flex;
+    // margin: 10px;
+    font-size: 30px;
+    justify-content: center;
+    border-radius: 4px;
+    height: 40px;
+    width: 120px;
+  }
   header{
     background: rgb(59, 191, 231);
    
@@ -65,95 +92,16 @@ body{
   }
   #tipos{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: rgb(214, 214, 214);
     border-radius: 10px;
+    padding: 10px;
     margin: 10px;
     height: 60px;
     width: 300px;
 
-    .normal{
-      background-color: $colorNormal;
-    }
 
-    .fire{
-      background-color: $colorFire;
-    }
-
-    .water{
-      background: $colorWater;
-    }
-
-    .grass{
-      background: $colorGrass;
-    }
-
-    .flying{
-      background: $colorFlying;
-    }
-
-    .fighting{
-      background: $colorFighting;
-    }
-
-    .poison{
-      background: $colorPoison;
-    }
-
-    .electric{
-      background: $colorElectric;
-    }
-
-    .ground{
-      background: $colorGround;
-    }
-
-    .rock{
-      background: $colorRock;
-    }
-
-    .psychic{
-      background: $colorPsychic;
-    }
-
-    .ice{
-      background: $colorIce;
-    }
-
-    .bug{
-      background: $colorBug;
-    }
-
-    .ghost{
-      background: $colorGhost;
-    }
-
-    .steel{
-      background: $colorSteel;
-    }
-
-    .dragon{
-      background: $colorDragon;
-    }
-
-    .dark{
-      background: $colorDark;
-    }
-
-    .fairy{
-      background: $colorFairy;
-    }
-
-    .tipo{
-      display: flex;
-      margin: 10px;
-      font-size: 30px;
-      justify-content: center;
-      border-radius: 4px;
-      height: 40px;
-      width: 120px;
-    }
   }
   #info{
     display: flex;
@@ -165,7 +113,7 @@ body{
       
     }
     #fraquesas{
-      background-color: rgb(25, 161, 155);
+      // background-color: rgb(25, 161, 155);
       width: 600px;
       height: 600px;
       border-left: solid 2px black;
@@ -182,11 +130,11 @@ body{
         background-color: gray;
         height: 100px;
       }
-      #d1-2x{
+      #d1_2x{
         background-color: rgb(201, 201, 42);
         height: 100px;
       }
-      #d1-4x{
+      #d1_4x{
         background-color: lightblue;
         height: 100px;
       }

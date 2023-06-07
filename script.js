@@ -2,6 +2,12 @@
 const btok = document.querySelector('#btok')
 const imagemPokemon = document.querySelector('#imagemPokemon')
 const tipos = document.querySelector('#tipos')
+const d4x = document.querySelector('#d4x')
+const d2x = document.querySelector('#d2x')
+const d1x = document.querySelector('#d1x')
+const d1_2x = document.querySelector('#d1_2x')
+const d1_4x = document.querySelector('#d1_4x')
+const d0x = document.querySelector('#d0x')
 // const pokemon = document.querySelector('#pokemon').value
 // const pokemon = ''
 
@@ -26,10 +32,7 @@ const listaTiposGeral = [
   { tipo: 'fairy', dano: 1 } 
 ]
 
-
 let listaF = []
-
-
 
 function geraFraquesas (dados){
   console.log("dados gerafraq", dados)
@@ -41,6 +44,9 @@ function geraFraquesas (dados){
   let listRelevantes = []
 
   function addList (item){
+
+    console.log("add list")
+
     for (tipo of item.damage_relations.double_damage_from){
       listRelevantes.push({tipo:tipo["name"], dano:2})
     }
@@ -50,45 +56,87 @@ function geraFraquesas (dados){
     for (tipo of item.damage_relations.no_damage_from){
       listRelevantes.push({tipo:tipo["name"], dano:0})
     }
+    console.log(listRelevantes)
     return listRelevantes
   }
 
 
   function multtipos (item){
     
-
-
-
     addList(item[0])
     // addList(item[1])
     // console.log(listRelevantes)
     return listRelevantes
   }
 
-  function geraListaFinalDeTipos(listRel){
-    console.log(listRel)
-    console.log(listaTiposGeral)
+  function fraquezas (dados){
 
-    let listaFinal = []
-    
-    for (tipoGeral of listaTiposGeral){
-      for (tipoRel of listRel){
+    function montaHTML (item){
+      console.log(listRelevantes)
 
-        console.log("tipos", tipoGeral.tipo, tipoRel.tipo)
-
-        if(tipoGeral.tipo === tipoRel.tipo){
-          tipoGeral.dano *=tipoRel.dano
+      for(tipoGeral of listaTiposGeral){
+        for(tipoRel of listRelevantes){
+          if (tipoGeral.tipo === tipoRel.tipo){
+            tipoGeral.dano *= tipoRel.dano
+          }
         }
       }
+      console.log(listaTiposGeral)
+
+
+
+
+
+      // htmlTipos += `<div class="tipo ${item.type.name}"> ${item.type.name} </div>`
+
+
     }
 
-    console.log(listaTiposGeral)
+    dados[0].then(addList)
 
-  }  
-  
-  
+    if(dados[1]){
+      dados[1]
+        .then(addList) 
+        .then(montaHTML)
+    } else{
+      dados[0].then(montaHTML)
+    }
+
+    
+
+    console.log(listRelevantes)
+  }
+
+  fraquezas(dados)
+
 
   console.log(listRelevantes)
+
+  // function geraListaFinalDeTipos(listRel, listGeral){
+  // console.log(listRel)
+  // console.log(listGeral)
+
+  let listaFinal = []
+  
+  for (tipoGeral of listaTiposGeral){
+    // console.log(listRelevantes)
+    for (tipoRel of listRelevantes){
+
+      console.log("tipos", tipoGeral.tipo, tipoRel.tipo)
+      
+      if(tipoGeral.tipo === tipoRel.tipo){
+        console.log("reldano", tipoRel.dano)
+        tipoGeral.dano *= tipoRel.dano
+      }
+    }
+    // }
+    // console.log(listGeral)
+  }  
+
+  // geraListaFinalDeTipos(listRelevantes, listaTiposGeral)
+
+  console.log("lista geral atualizada",listaTiposGeral)
+  
 
 }
 

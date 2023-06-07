@@ -10,6 +10,68 @@ body {
   align-items: center;
   background-color: white;
 }
+body .normal {
+  background-color: #a4acaf;
+}
+body .fire {
+  background-color: #fd7d24;
+}
+body .water {
+  background: #4592c4;
+}
+body .grass {
+  background: #9bcc50;
+}
+body .flying {
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+}
+body .fighting {
+  background: #d56723;
+}
+body .poison {
+  background: #b97fc9;
+}
+body .electric {
+  background: #eed535;
+}
+body .ground {
+  background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+}
+body .rock {
+  background: #a38c21;
+}
+body .psychic {
+  background: #f366b9;
+}
+body .ice {
+  background: #51c4e7;
+}
+body .bug {
+  background: #729f3f;
+}
+body .ghost {
+  background: #7b62a3;
+}
+body .steel {
+  background: #9eb7b8;
+}
+body .dragon {
+  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+}
+body .dark {
+  background: #707070;
+}
+body .fairy {
+  background: #fdb9e9;
+}
+body .tipo {
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  border-radius: 4px;
+  height: 40px;
+  width: 120px;
+}
 body header {
   background: rgb(59, 191, 231);
   display: flex;
@@ -35,76 +97,14 @@ body header #d-input #btok {
 }
 body #tipos {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: rgb(214, 214, 214);
   border-radius: 10px;
+  padding: 10px;
   margin: 10px;
   height: 60px;
   width: 300px;
-}
-body #tipos .normal {
-  background-color: #a4acaf;
-}
-body #tipos .fire {
-  background-color: #fd7d24;
-}
-body #tipos .water {
-  background: #4592c4;
-}
-body #tipos .grass {
-  background: #9bcc50;
-}
-body #tipos .flying {
-  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
-}
-body #tipos .fighting {
-  background: #d56723;
-}
-body #tipos .poison {
-  background: #b97fc9;
-}
-body #tipos .electric {
-  background: #eed535;
-}
-body #tipos .ground {
-  background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
-}
-body #tipos .rock {
-  background: #a38c21;
-}
-body #tipos .psychic {
-  background: #f366b9;
-}
-body #tipos .ice {
-  background: #51c4e7;
-}
-body #tipos .bug {
-  background: #729f3f;
-}
-body #tipos .ghost {
-  background: #7b62a3;
-}
-body #tipos .steel {
-  background: #9eb7b8;
-}
-body #tipos .dragon {
-  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
-}
-body #tipos .dark {
-  background: #707070;
-}
-body #tipos .fairy {
-  background: #fdb9e9;
-}
-body #tipos .tipo {
-  display: flex;
-  margin: 10px;
-  font-size: 30px;
-  justify-content: center;
-  border-radius: 4px;
-  height: 40px;
-  width: 120px;
 }
 body #info {
   display: flex;
@@ -115,7 +115,6 @@ body #info img {
   height: 600px;
 }
 body #info #fraquesas {
-  background-color: rgb(25, 161, 155);
   width: 600px;
   height: 600px;
   border-left: solid 2px black;
@@ -132,11 +131,11 @@ body #info #fraquesas #d1x {
   background-color: gray;
   height: 100px;
 }
-body #info #fraquesas #d1-2x {
+body #info #fraquesas #d1_2x {
   background-color: rgb(201, 201, 42);
   height: 100px;
 }
-body #info #fraquesas #d1-4x {
+body #info #fraquesas #d1_4x {
   background-color: lightblue;
   height: 100px;
 }
