@@ -93,6 +93,7 @@ body{
   #tipos{
     display: flex;
     justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: rgb(214, 214, 214);
     border-radius: 10px;
@@ -101,6 +102,10 @@ body{
     height: 60px;
     width: 300px;
 
+    // .espaco{
+    //   margin: 5px;
+    //   padding: 5px;
+    // }
 
   }
   #info{
@@ -108,8 +113,8 @@ body{
     border: solid 2px black;
 
     img{
-      width: 600px;
-      height: 600px;
+      width: 1080px;
+      height: 1080px;
       
     }
     #fraquesas{
@@ -119,28 +124,58 @@ body{
       border-left: solid 2px black;
       
       #d4x{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
         background-color: red;
-        height: 100px;
+        height: 180px;
+        padding: 5px;
       }
       #d2x{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
         background-color: orange;
-        height: 100px;
+        height: 180px;
+        padding: 5px;
       }
       #d1x{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
         background-color: gray;
-        height: 100px;
+        height: 180px;
+        padding: 5px;
       }
       #d1_2x{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
         background-color: rgb(201, 201, 42);
-        height: 100px;
+        height: 180px;
+        padding: 5px;
       }
       #d1_4x{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
         background-color: lightblue;
-        height: 100px;
+        height: 180px;
+        padding: 5px;
       }
       #d0x{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
         background-color: white;
-        height: 100px;
+        height: 180px;
+        padding: 5px;
       }
 
     }

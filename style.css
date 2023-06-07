@@ -98,6 +98,7 @@ body header #d-input #btok {
 body #tipos {
   display: flex;
   justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: rgb(214, 214, 214);
   border-radius: 10px;
@@ -111,8 +112,8 @@ body #info {
   border: solid 2px black;
 }
 body #info img {
-  width: 600px;
-  height: 600px;
+  width: 1080px;
+  height: 1080px;
 }
 body #info #fraquesas {
   width: 600px;
@@ -120,26 +121,56 @@ body #info #fraquesas {
   border-left: solid 2px black;
 }
 body #info #fraquesas #d4x {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   background-color: red;
-  height: 100px;
+  height: 180px;
+  padding: 5px;
 }
 body #info #fraquesas #d2x {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   background-color: orange;
-  height: 100px;
+  height: 180px;
+  padding: 5px;
 }
 body #info #fraquesas #d1x {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   background-color: gray;
-  height: 100px;
+  height: 180px;
+  padding: 5px;
 }
 body #info #fraquesas #d1_2x {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   background-color: rgb(201, 201, 42);
-  height: 100px;
+  height: 180px;
+  padding: 5px;
 }
 body #info #fraquesas #d1_4x {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   background-color: lightblue;
-  height: 100px;
+  height: 180px;
+  padding: 5px;
 }
 body #info #fraquesas #d0x {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
-  height: 100px;
+  height: 180px;
+  padding: 5px;
 }/*# sourceMappingURL=style.css.map */

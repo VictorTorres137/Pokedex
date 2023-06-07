@@ -11,26 +11,7 @@ const d0x = document.querySelector('#d0x')
 // const pokemon = document.querySelector('#pokemon').value
 // const pokemon = ''
 
-const listaTiposGeral = [
-  { tipo: 'normal', dano: 1 },
-  { tipo: 'fire', dano: 1 },
-  { tipo: 'water', dano: 1 },
-  { tipo: 'grass', dano: 1 },
-  { tipo: 'flying', dano: 1 },
-  { tipo: 'fighting', dano: 1 },
-  { tipo: 'poison', dano: 1 },
-  { tipo: 'electric', dano: 1 },
-  { tipo: 'ground', dano: 1 },
-  { tipo: 'rock', dano: 1 },
-  { tipo: 'psychic', dano: 1 },
-  { tipo: 'ice', dano: 1 },
-  { tipo: 'bug', dano: 1 },
-  { tipo: 'ghost', dano: 1 },
-  { tipo: 'steel', dano: 1 },
-  { tipo: 'dragon', dano: 1 },
-  { tipo: 'dark', dano: 1 },
-  { tipo: 'fairy', dano: 1 } 
-]
+
 
 let listaF = []
 
@@ -42,10 +23,9 @@ function geraFraquesas (dados){
 
   
   let listRelevantes = []
+  listRelevantes = []
 
   function addList (item){
-
-    console.log("add list")
 
     for (tipo of item.damage_relations.double_damage_from){
       listRelevantes.push({tipo:tipo["name"], dano:2})
@@ -56,6 +36,7 @@ function geraFraquesas (dados){
     for (tipo of item.damage_relations.no_damage_from){
       listRelevantes.push({tipo:tipo["name"], dano:0})
     }
+
     console.log(listRelevantes)
     return listRelevantes
   }
@@ -70,10 +51,10 @@ function geraFraquesas (dados){
   }
 
   function fraquezas (dados){
+    
 
     function montaHTML (item){
-      console.log(listRelevantes)
-
+      
       for(tipoGeral of listaTiposGeral){
         for(tipoRel of listRelevantes){
           if (tipoGeral.tipo === tipoRel.tipo){
@@ -81,15 +62,63 @@ function geraFraquesas (dados){
           }
         }
       }
+
+      let HTMLd4x = ""
+      let HTMLd2x = ""
+      let HTMLd1x = ""
+      let HTMLd1_2x = ""
+      let HTMLd1_4x = ""
+      let HTMLd0x = ""
+
+      HTMLd4x = ""
+      HTMLd2x = ""
+      HTMLd1x = ""
+      HTMLd1_2x = ""
+      HTMLd1_4x = ""
+      HTMLd0x = ""
+
+      d4x.innerHTML = ""
+      d2x.innerHTML = ""
+      d1x.innerHTML = ""
+      d1_2x.innerHTML = ""
+      d1_4x.innerHTML = ""
+      d0x.innerHTML = ""
+
+      listaTiposGeral.forEach(distribuidor)
       console.log(listaTiposGeral)
+      console.log(d4x.innerHTML)
 
+      d4x.innerHTML = HTMLd4x
+      d2x.innerHTML = HTMLd2x
+      d1x.innerHTML = HTMLd1x
+      d1_2x.innerHTML = HTMLd1_2x
+      d1_4x.innerHTML = HTMLd1_4x
+      d0x.innerHTML = HTMLd0x
 
+      console.log(d4x.innerHTML)
 
-
-
-      // htmlTipos += `<div class="tipo ${item.type.name}"> ${item.type.name} </div>`
-
-
+      function distribuidor(value){
+        switch (value.dano){
+          case 4:
+            HTMLd4x += `<div class="tipo ${value.tipo}"> ${value.tipo} </div>`;
+          break;
+          case 2:
+            HTMLd2x += `<div class="tipo ${value.tipo}"> ${value.tipo} </div>`;
+          break;
+          case 1:
+            HTMLd1x += `<div class="tipo ${value.tipo}"> ${value.tipo} </div>`;
+          break;
+          case 0.5:
+            HTMLd1_2x += `<div class="tipo ${value.tipo}"> ${value.tipo} </div>`;
+          break;
+          case 0.25:
+            HTMLd1_4x += `<div class="tipo ${value.tipo}"> ${value.tipo} </div>`;
+          break;
+          case 0:
+            HTMLd0x += `<div class="tipo ${value.tipo}"> ${value.tipo} </div>`;
+          break;
+        }
+      }
     }
 
     dados[0].then(addList)
@@ -104,20 +133,35 @@ function geraFraquesas (dados){
 
     
 
-    console.log(listRelevantes)
+    // console.log(listRelevantes)
   }
 
   fraquezas(dados)
 
 
-  console.log(listRelevantes)
-
-  // function geraListaFinalDeTipos(listRel, listGeral){
-  // console.log(listRel)
-  // console.log(listGeral)
-
   let listaFinal = []
   
+  const listaTiposGeral = [
+    { tipo: 'normal', dano: 1 },
+    { tipo: 'fire', dano: 1 },
+    { tipo: 'water', dano: 1 },
+    { tipo: 'grass', dano: 1 },
+    { tipo: 'flying', dano: 1 },
+    { tipo: 'fighting', dano: 1 },
+    { tipo: 'poison', dano: 1 },
+    { tipo: 'electric', dano: 1 },
+    { tipo: 'ground', dano: 1 },
+    { tipo: 'rock', dano: 1 },
+    { tipo: 'psychic', dano: 1 },
+    { tipo: 'ice', dano: 1 },
+    { tipo: 'bug', dano: 1 },
+    { tipo: 'ghost', dano: 1 },
+    { tipo: 'steel', dano: 1 },
+    { tipo: 'dragon', dano: 1 },
+    { tipo: 'dark', dano: 1 },
+    { tipo: 'fairy', dano: 1 } 
+  ]
+
   for (tipoGeral of listaTiposGeral){
     // console.log(listRelevantes)
     for (tipoRel of listRelevantes){
@@ -134,9 +178,6 @@ function geraFraquesas (dados){
   }  
 
   // geraListaFinalDeTipos(listRelevantes, listaTiposGeral)
-
-  console.log("lista geral atualizada",listaTiposGeral)
-  
 
 }
 
