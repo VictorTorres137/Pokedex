@@ -187,6 +187,7 @@ function transformaJson (response){
 }
 
 function mostraImagem(dados){
+  console.log(dados)
   imagemPokemon.src = dados.sprites.other.dream_world.front_default
   return dados
 }

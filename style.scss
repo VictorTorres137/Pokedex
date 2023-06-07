@@ -110,17 +110,35 @@ body{
   }
   #info{
     display: flex;
-    border: solid 2px black;
-
-    img{
-      width: 1080px;
+    border: solid 4px black;
+    .stats{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      width: 540px;
       height: 1080px;
-      
+      // background-color: blue;
+
+      img{
+        width: 540px;
+        height: 535px;
+        // border: solid 3px black;
+        
+      }
+  
+      .atributos{
+        background-color: gray;
+        width: 540px;
+        height: 545px;
+        border: solid 3px black;
+        
+      }
     }
+
     #fraquesas{
       // background-color: rgb(25, 161, 155);
       width: 600px;
-      height: 600px;
+      height: 1080px;
       border-left: solid 2px black;
       
       #d4x{

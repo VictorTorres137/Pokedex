@@ -109,15 +109,28 @@ body #tipos {
 }
 body #info {
   display: flex;
-  border: solid 2px black;
+  border: solid 4px black;
 }
-body #info img {
-  width: 1080px;
+body #info .stats {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 540px;
   height: 1080px;
+}
+body #info .stats img {
+  width: 540px;
+  height: 535px;
+}
+body #info .stats .atributos {
+  background-color: gray;
+  width: 540px;
+  height: 545px;
+  border: solid 3px black;
 }
 body #info #fraquesas {
   width: 600px;
-  height: 600px;
+  height: 1080px;
   border-left: solid 2px black;
 }
 body #info #fraquesas #d4x {
