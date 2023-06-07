@@ -11,6 +11,7 @@ const listaTiposGeral = [
   { tipo: 'water', dano: 1 },
   { tipo: 'grass', dano: 1 },
   { tipo: 'flying', dano: 1 },
+  { tipo: 'fighting', dano: 1 },
   { tipo: 'poison', dano: 1 },
   { tipo: 'electric', dano: 1 },
   { tipo: 'ground', dano: 1 },
@@ -31,10 +32,15 @@ let listaF = []
 
 
 function geraFraquesas (dados){
+  console.log("dados gerafraq", dados)
 
-  function multtipos (item){
-    let listRelevantes = []
+  let rel1
+  let rel2 = false
 
+  
+  let listRelevantes = []
+
+  function addList (item){
     for (tipo of item.damage_relations.double_damage_from){
       listRelevantes.push({tipo:tipo["name"], dano:2})
     }
@@ -44,47 +50,46 @@ function geraFraquesas (dados){
     for (tipo of item.damage_relations.no_damage_from){
       listRelevantes.push({tipo:tipo["name"], dano:0})
     }
-
     return listRelevantes
   }
 
-  let rel1
-  let rel2 = false
-  let listaGeral = [
-    {"tipo":"normal", dano: 1},
-    {"tipo":"fire", dano: 1},
-    {"tipo":"water", dano: 1},
-    {"tipo":"grass", dano: 1},
-    {"tipo":"flying", dano: 1},
-    {"tipo":"fighting", dano: 1},
-    {"tipo":"poison", dano: 1},
-    {"tipo":"electric", dano: 1},
-    {"tipo":"ground", dano: 1},
-    {"tipo":"rock", dano: 1},
-    {"tipo":"psychic", dano: 1},
-    {"tipo":"ice", dano: 1},
-    {"tipo":"bug", dano: 1},
-    {"tipo":"ghost", dano: 1},
-    {"tipo":"steel", dano: 1},
-    {"tipo":"dragon", dano: 1},
-    {"tipo":"dark", dano: 1},
-    {"tipo":"fairy", dano: 1}
-  ]
-  
+
+  function multtipos (item){
+    
 
 
-  let tipos = []
 
-  const tipo1 = fetch(`${dados.types[0].type["url"]}`).then(transformaJson)
-  tipos.push(tipo1)
-
-  if (dados.types[1]){
-    const tipo2 = fetch(`${dados.types[1].type["url"]}`).then(transformaJson)
-    tipos.push(tipo2)
-    // console.log(tipo2)
+    addList(item[0])
+    // addList(item[1])
+    // console.log(listRelevantes)
+    return listRelevantes
   }
-  // na lista tipos tem as promisses dos tipos do pokemon
+
+  function geraListaFinalDeTipos(listRel){
+    console.log(listRel)
+    console.log(listaTiposGeral)
+
+    let listaFinal = []
+    
+    for (tipoGeral of listaTiposGeral){
+      for (tipoRel of listRel){
+
+        console.log("tipos", tipoGeral.tipo, tipoRel.tipo)
+
+        if(tipoGeral.tipo === tipoRel.tipo){
+          tipoGeral.dano *=tipoRel.dano
+        }
+      }
+    }
+
+    console.log(listaTiposGeral)
+
+  }  
   
+  
+
+  console.log(listRelevantes)
+
 }
 
 
@@ -110,10 +115,20 @@ function mostraTipos(dados){
   tipos.innerHTML = htmlTipos
 
   // console.log(listaTipos)
-  return dados
+
+  let tiposPokemon = []
+
+  const tipo1 = fetch(`${dados.types[0].type["url"]}`).then(transformaJson)
+  tiposPokemon.push(tipo1)
+
+  if (dados.types[1]){
+    const tipo2 = fetch(`${dados.types[1].type["url"]}`).then(transformaJson)
+    tiposPokemon.push(tipo2)
+    // console.log(tipo2)
+  }
+
+  return tiposPokemon
 }
-
-
 
 function printErro (dados){
   console.log('Erro', dados)
