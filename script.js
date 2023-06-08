@@ -8,6 +8,14 @@ const d1x = document.querySelector('#d1x')
 const d1_2x = document.querySelector('#d1_2x')
 const d1_4x = document.querySelector('#d1_4x')
 const d0x = document.querySelector('#d0x')
+const nome = document.querySelector('#nome')
+const hp = document.querySelector('#hp')
+const atk = document.querySelector('#atk')
+const def = document.querySelector('#def')
+const spatk = document.querySelector('#spatk')
+const spdef = document.querySelector('#spdef')
+const spd = document.querySelector('#spd')
+
 // const pokemon = document.querySelector('#pokemon').value
 // const pokemon = ''
 
@@ -16,7 +24,7 @@ const d0x = document.querySelector('#d0x')
 let listaF = []
 
 function geraFraquesas (dados){
-  console.log("dados gerafraq", dados)
+  // console.log("dados gerafraq", dados)
 
   let rel1
   let rel2 = false
@@ -37,7 +45,7 @@ function geraFraquesas (dados){
       listRelevantes.push({tipo:tipo["name"], dano:0})
     }
 
-    console.log(listRelevantes)
+    // console.log(listRelevantes)
     return listRelevantes
   }
 
@@ -85,8 +93,8 @@ function geraFraquesas (dados){
       d0x.innerHTML = ""
 
       listaTiposGeral.forEach(distribuidor)
-      console.log(listaTiposGeral)
-      console.log(d4x.innerHTML)
+      // console.log(listaTiposGeral)
+      // console.log(d4x.innerHTML)
 
       d4x.innerHTML = HTMLd4x
       d2x.innerHTML = HTMLd2x
@@ -95,7 +103,7 @@ function geraFraquesas (dados){
       d1_4x.innerHTML = HTMLd1_4x
       d0x.innerHTML = HTMLd0x
 
-      console.log(d4x.innerHTML)
+      // console.log(d4x.innerHTML)
 
       function distribuidor(value){
         switch (value.dano){
@@ -187,12 +195,12 @@ function transformaJson (response){
 }
 
 function mostraImagem(dados){
-  console.log(dados)
+  // console.log(dados)
   imagemPokemon.src = dados.sprites.other.dream_world.front_default
   return dados
 }
 
-function mostraTipos(dados){
+function atualizaInfo(dados){
   
 
   let listaTipos = []
@@ -217,6 +225,18 @@ function mostraTipos(dados){
     // console.log(tipo2)
   }
 
+  console.log(dados)
+
+  nome.innerHTML = `ID. ${dados.id}  ${dados.name}`
+
+  hp.innerHTML = dados.stats[0].base_stat
+  atk.innerHTML = dados.stats[1].base_stat
+  def.innerHTML = dados.stats[2].base_stat
+  spatk.innerHTML = dados.stats[3].base_stat
+  spdef.innerHTML = dados.stats[4].base_stat
+  spd.innerHTML = dados.stats[5].base_stat
+
+
   return tiposPokemon
 }
 
@@ -232,7 +252,7 @@ btok.onclick = () => {
   fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
     .then(transformaJson)
     .then(mostraImagem)
-    .then(mostraTipos)
+    .then(atualizaInfo)
     .then(geraFraquesas)
     .catch(printErro)
 }

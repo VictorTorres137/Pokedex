@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family:Arial, Helvetica, sans-serif;
 
 }
 // $colorNormal: linear-gradient(#a4acaf 100%);
@@ -57,10 +58,13 @@ body{
     display: flex;
     // margin: 10px;
     font-size: 30px;
+    font-weight: bold;
     justify-content: center;
+    align-items: center;
     border-radius: 4px;
     height: 40px;
     width: 120px;
+    margin: 10px;
   }
   header{
     background: rgb(59, 191, 231);
@@ -109,93 +113,119 @@ body{
 
   }
   #info{
+    background-color: rgb(76, 182, 173);
+    .nome{
+      display: flex;
+      background-color: orange;
+      height: 100px;
+      width: 540px;
+      font-size: 60px;
+      font-weight: bold;
+      border: solid 2px black;
+      justify-content: center;
+      align-items: center;
+      text-transform: capitalize;
+
+    }
     display: flex;
     border: solid 4px black;
     .stats{
       display: flex;
       justify-content: space-around;
+      align-items: center;
       flex-direction: column;
       width: 540px;
       height: 1080px;
+      border: solid 3px black;
       // background-color: blue;
 
       img{
-        width: 540px;
-        height: 535px;
+        background-color: white;
+        width: 400px;
+        height: 400px;
+        border: solid 6px rgb(122, 35, 9);
+        border-radius: 20px;
         // border: solid 3px black;
         
       }
   
       .atributos{
-        background-color: gray;
-        width: 540px;
-        height: 545px;
-        border: solid 3px black;
-        
+        background-color: orange;
+        width: 500px;
+        height: 490px;
+        border: solid 6px black;
+        border-radius: 20px;
+        div{
+          font-size: 40px;
+          font-weight: bold;
+        }
+        .statusbase{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .statsind{
+
+          display: flex;
+          height: 70px;
+          width: 500px;
+          padding: 0px 30px 0px 30px;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+
+    .indicacao{
+      div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #19c7b8;
+        height: 180px;
+        width: 180px;
+        border: solid 5px black;
+        font-size: 90px;
+        font-weight: bold;
       }
     }
 
     #fraquesas{
       // background-color: rgb(25, 161, 155);
-      width: 600px;
+      width: 900px;
       height: 1080px;
       border-left: solid 2px black;
       
-      #d4x{
+      .campofraq{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        background-color: red;
         height: 180px;
         padding: 5px;
-      }
-      #d2x{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        background-color: orange;
-        height: 180px;
-        padding: 5px;
-      }
-      #d1x{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        background-color: gray;
-        height: 180px;
-        padding: 5px;
-      }
-      #d1_2x{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        background-color: rgb(201, 201, 42);
-        height: 180px;
-        padding: 5px;
-      }
-      #d1_4x{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        background-color: lightblue;
-        height: 180px;
-        padding: 5px;
-      }
-      #d0x{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        background-color: white;
-        height: 180px;
-        padding: 5px;
+        border: solid 1px black;
       }
 
+      #d4x{
+        // background-color: red;
+      }
+      #d2x{
+        // background-color: orange;
+      }
+      #d1x{
+        // background-color: gray;
+      }
+      #d1_2x{
+        // background-color: rgb(201, 201, 42);
+      }
+      #d1_4x{
+        // background-color: lightblue;
+      }
+      #d0x{
+        // background-color: white;
+      }
+      
     }
   }
 }

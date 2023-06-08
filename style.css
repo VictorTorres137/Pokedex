@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -67,10 +68,13 @@ body .fairy {
 body .tipo {
   display: flex;
   font-size: 30px;
+  font-weight: bold;
   justify-content: center;
+  align-items: center;
   border-radius: 4px;
   height: 40px;
   width: 120px;
+  margin: 10px;
 }
 body header {
   background: rgb(59, 191, 231);
@@ -108,82 +112,85 @@ body #tipos {
   width: 300px;
 }
 body #info {
+  background-color: rgb(76, 182, 173);
   display: flex;
   border: solid 4px black;
+}
+body #info .nome {
+  display: flex;
+  background-color: orange;
+  height: 100px;
+  width: 540px;
+  font-size: 60px;
+  font-weight: bold;
+  border: solid 2px black;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
 }
 body #info .stats {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   flex-direction: column;
   width: 540px;
   height: 1080px;
-}
-body #info .stats img {
-  width: 540px;
-  height: 535px;
-}
-body #info .stats .atributos {
-  background-color: gray;
-  width: 540px;
-  height: 545px;
   border: solid 3px black;
 }
+body #info .stats img {
+  background-color: white;
+  width: 400px;
+  height: 400px;
+  border: solid 6px rgb(122, 35, 9);
+  border-radius: 20px;
+}
+body #info .stats .atributos {
+  background-color: orange;
+  width: 500px;
+  height: 490px;
+  border: solid 6px black;
+  border-radius: 20px;
+}
+body #info .stats .atributos div {
+  font-size: 40px;
+  font-weight: bold;
+}
+body #info .stats .atributos .statusbase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body #info .stats .atributos .statsind {
+  display: flex;
+  height: 70px;
+  width: 500px;
+  padding: 0px 30px 0px 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+body #info .indicacao div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #19c7b8;
+  height: 180px;
+  width: 180px;
+  border: solid 5px black;
+  font-size: 90px;
+  font-weight: bold;
+}
 body #info #fraquesas {
-  width: 600px;
+  width: 900px;
   height: 1080px;
   border-left: solid 2px black;
 }
-body #info #fraquesas #d4x {
+body #info #fraquesas .campofraq {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background-color: red;
   height: 180px;
   padding: 5px;
-}
-body #info #fraquesas #d2x {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  background-color: orange;
-  height: 180px;
-  padding: 5px;
-}
-body #info #fraquesas #d1x {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  background-color: gray;
-  height: 180px;
-  padding: 5px;
-}
-body #info #fraquesas #d1_2x {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgb(201, 201, 42);
-  height: 180px;
-  padding: 5px;
-}
-body #info #fraquesas #d1_4x {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  background-color: lightblue;
-  height: 180px;
-  padding: 5px;
-}
-body #info #fraquesas #d0x {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  height: 180px;
-  padding: 5px;
+  border: solid 1px black;
 }/*# sourceMappingURL=style.css.map */
